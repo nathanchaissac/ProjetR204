@@ -22,3 +22,4 @@ clean: cesar.o vigenere.o verif.o main.exe
 	del vigenere.o
 	del verif.o
 	del main.exe
+	del resultat.txt
