@@ -45,7 +45,7 @@ void main() {
     }
     scanf("%[^\n]s",tab1);
     for(int j = 0; j<=10000;j++){
-        tab2[j]=tolower(tab1[j]);
+        tab2[j]=toupper(tab1[j]);
     }
     //verification de la validite du texte saisi
     if(verifTexte(tab2)==false){

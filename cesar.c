@@ -36,8 +36,8 @@ char* chiffreTexte(char tab[10000],int k){
      for(int i=0;i<=10000;i++){
         if(isalnum(tab[i])){
             for(int p = 1;p<=key; p++){
-                if(tab[i]=='z'){
-                    tab[i]='a';
+                if(tab[i]=='Z'){
+                    tab[i]='A';
                 } else if (tab[i]=='9') {
                     tab[i]='1';
                 } else {
@@ -57,8 +57,8 @@ char* dechiffreTexte(char tab[10000],int k){
      for(int i=0;i<=10000;i++){
         if(isalnum(tab[i])){
             for(int p = 1;p<=key; p++){
-                if(tab[i]=='a'){
-                    tab[i]='z';
+                if(tab[i]=='A'){
+                    tab[i]='Z';
                 } else if (tab[i]=='1') {
                     tab[i]='9';
                 } else {
