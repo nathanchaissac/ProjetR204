@@ -62,8 +62,8 @@ char* dechiffreTexteVigenere(char tab[10000],char k[1000]){
             j = i%strlen(k);
             key=k[j]-97;
             for(int p = 1;p<=key; p++){
-                if(tab[i]=='Z'){
-                    tab[i]='A';
+                if(tab[i]=='A'){
+                    tab[i]='Z';
                 } else if (tab[i]=='9') {
                     tab[i]='1';
                 } else {

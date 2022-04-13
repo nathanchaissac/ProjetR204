@@ -43,7 +43,7 @@ void main() {
     for(int j = 0; j<=10000;j++){
         tab1[j]=' ';
     }
-    scanf("%[^\n]s",tab1);
+    scanf("%s",tab1);
     for(int j = 0; j<=10000;j++){
         tab2[j]=toupper(tab1[j]);
     }
@@ -80,13 +80,11 @@ void main() {
             scanf("%d",&rep2);
         }
     } else if (rep==2){
+        printf("%d",rep2);
         char cle[1000];
         int k;
         printf("Saisir la cle.\n");
-        for(int j = 0; j<=10000;j++){
-            cle[j]=' ';
-        }
-        scanf("%[^\n]s",cle);
+        scanf("%s",cle);
         if(rep2==1){
             printf("Message chiffre : %s\n",chiffreTexteVigenere(tab2,cle));
             fprintf(fichier, "%s\n",tab2);
@@ -96,7 +94,7 @@ void main() {
             fprintf(fichier, "%s\n",tab2);
             fclose(fichier);
         } else {
-            printf("Taper 1 pour chiffrer votre message, et 2 pour le déchiffrer.\n");
+            printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n");
             scanf("%d",&rep2);
         }
     }
