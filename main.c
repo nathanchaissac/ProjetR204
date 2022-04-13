@@ -43,7 +43,7 @@ void main() {
     for(int j = 0; j<=10000;j++){
         tab1[j]=' ';
     }
-    scanf("%s",tab1);
+    scanf("%[^\n]s",tab1);
     for(int j = 0; j<=10000;j++){
         tab2[j]=toupper(tab1[j]);
     }
@@ -80,7 +80,6 @@ void main() {
             scanf("%d",&rep2);
         }
     } else if (rep==2){
-        printf("%d",rep2);
         char cle[1000];
         int k;
         printf("Saisir la cle.\n");
