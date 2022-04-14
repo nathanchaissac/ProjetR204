@@ -32,7 +32,7 @@
 //Verif caractere special
 bool verifTexte(char tab[10000]){
     char verifTab[67] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'-,() ";
-    for(int i=0; i<=10000; i++){
+    for(int i=0; i<=strlen(tab); i++){
         if(strchr(verifTab, tab[i])==NULL){
             return false;
         }
@@ -42,7 +42,7 @@ bool verifTexte(char tab[10000]){
 
 bool verifCle(char tab[10000]){
     char verifTab[53]="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-    for(int i=0; i<=10000; i++){
+    for(int i=0; i<=strlen(tab); i++){
         if(strchr(verifTab, tab[i])==NULL){
             return false;
         }

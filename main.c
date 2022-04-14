@@ -40,11 +40,8 @@ void main() {
     fichier = fopen("resultat.txt","w");
     //Initialisation du tableau et saisie du text
     printf("Tapez votre message (sans caractere special) :\n");
-    for(int j = 0; j<=10000;j++){
-        tab1[j]=' ';
-    }
     scanf("%[^\n]s",tab1);
-    for(int j = 0; j<=10000;j++){
+    for(int j = 0; j<=strlen(tab1);j++){
         tab2[j]=toupper(tab1[j]);
     }
     //verification de la validite du texte saisi
@@ -84,10 +81,6 @@ void main() {
         int k;
         printf("Saisir la cle.\n");
         scanf("%s",cle);
-        if(verifCle(cle)==false){
-            printf("Cle de chiffrement incorrect, fermeture du programme");
-            exit(1);
-        }
         if(rep2==1){
             printf("Message chiffre : %s\n",chiffreTexteVigenere(tab2,cle));
             fprintf(fichier, "%s\n",tab2);
