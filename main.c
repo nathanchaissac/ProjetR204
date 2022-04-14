@@ -50,7 +50,7 @@ void main() {
     //verification de la validite du texte saisi
     if(verifTexte(tab2)==false){
         printf("Erreur dans le texte\n");
-        exit(0);
+        exit(1);
     } else {
         printf("Texte valide\n");
     }
@@ -84,6 +84,10 @@ void main() {
         int k;
         printf("Saisir la cle.\n");
         scanf("%s",cle);
+        if(verifCle(cle)==false){
+            printf("Cle de chiffrement incorrect, fermeture du programme");
+            exit(1);
+        }
         if(rep2==1){
             printf("Message chiffre : %s\n",chiffreTexteVigenere(tab2,cle));
             fprintf(fichier, "%s\n",tab2);
