@@ -39,7 +39,7 @@ void main() {
     FILE *fichier = NULL;
     fichier = fopen("resultat.txt","w");
     //Initialisation du tableau et saisie du text
-    printf("Tapez votre message (sans caractere special) :\n");
+    printf("Tapez votre message (sans caractere special) :\n>");
     scanf("%[^\n]s",tab1);
     for(int j = 0; j<=strlen(tab1);j++){
         tab2[j]=toupper(tab1[j]);
@@ -53,14 +53,14 @@ void main() {
     }
     //choix de l'algorithme
     int rep;
-    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\nToute autre valeur entrainera la fermeture du programme.\n");
+    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\nToute autre valeur entrainera la fermeture du programme.\n>");
     scanf("%d",&rep);
     if(rep!=1 && rep!=2) {
         printf("Valeur incorrecte. Fermeture du programme..");
         exit(0);
     }
     //choix pour chiffrer ou dechiffre le message saisi
-    printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\nToute autre valeur entrainera la fermeture du programme.\n");
+    printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\nToute autre valeur entrainera la fermeture du programme.\n>");
     int rep2;
     scanf("%d",&rep2);
     if(rep2!=1 && rep2!=2) {
@@ -85,7 +85,7 @@ void main() {
             fprintf(fichier, "%s\n",tab2);
             fclose(fichier);
         } else {
-            printf("Taper 1 pour chiffrer votre message, et 2 pour le déchiffrer.\n");
+            printf("Taper 1 pour chiffrer votre message, et 2 pour le déchiffrer.\n>");
             scanf("%d",&rep2);
         }
     } else if (rep==2){
@@ -107,7 +107,7 @@ void main() {
             fprintf(fichier, "%s\n",tab2);
             fclose(fichier);
         } else {
-            printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n");
+            printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n>");
             scanf("%d",&rep2);
         }
     }
