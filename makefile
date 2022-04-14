@@ -1,3 +1,9 @@
+ifeq ($(OS),Windows_NT)
+	RM = del
+else
+	RM = rm
+endif
+
 all: object main
 
 main: main.c cesar.o vigenere.o verif.o
@@ -17,16 +23,9 @@ object: cesar.c vigenere.c verif.c
 	gcc -c vigenere.c
 	gcc -c verif.c
 
-cleanW: cesar.o vigenere.o verif.o main.exe
-	del cesar.o
-	del vigenere.o
-	del verif.o
-	del main.exe
-	del resultat.txt
-
 clean: cesar.o vigenere.o verif.o main.exe
-	rm cesar.o
-	rm vigenere.o
-	rm verif.o
-	rm main.exe
-	rm resultat.txt
+	$(RM) cesar.o
+	$(RM) vigenere.o
+	$(RM) verif.o
+	$(RM) main.exe
+	$(RM) resultat.txt
