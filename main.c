@@ -53,8 +53,12 @@ void main() {
     }
     //choix de l'algorithme
     int rep;
-    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\n");
+    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\n Toute autre valeur entrainera la fermeture du programme.\n");
     scanf("%d",&rep);
+    if(rep!=1 || rep!=2) {
+        printf("Fermeture du programme..");
+        exit(0);
+    }
     //choix pour chiffrer ou dechiffre le message saisi
     printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n");
     int rep2;
@@ -94,7 +98,7 @@ void main() {
             scanf("%d",&rep2);
         }
     }
-    printf("Retrouvez le resutlat dans le fichier : resultat.txt \n");
+    printf("Retrouvez le resultat dans le fichier : resultat.txt \n");
 }
 
 
