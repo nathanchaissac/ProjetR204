@@ -27,4 +27,6 @@
 //verif caratere special
 bool verifTexte(char tab[10000]);
 //verif cle Vigenere
-bool verifCle(char tab[10000]);
+bool verifCleV(char tab[10000]);
+//verif cle cesar
+bool verifCleC(int cle);
