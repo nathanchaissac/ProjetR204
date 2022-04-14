@@ -91,8 +91,9 @@ void main() {
     } else if (rep==2){
         char cle[1000];
         int k;
+        fflush(stdin);
         printf("Saisir la cle.(mot attendu)\n");
-        scanf("%s",cle);
+        scanf("%[^\n]s",cle);
         if(verifCleV(cle)==false){
             printf("Erreur dans la saisie de la cle.\nFermeture du programme..");
             exit(0);
