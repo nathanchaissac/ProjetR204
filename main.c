@@ -94,7 +94,7 @@ void main() {
             scanf("%d",&rep2);
         }
     }
-    printf("Retrouvez le résutlat dans le fichier : resultat.txt \n");
+    printf("Retrouvez le resutlat dans le fichier : resultat.txt \n");
 }
 
 
