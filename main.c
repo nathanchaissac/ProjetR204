@@ -39,12 +39,9 @@ void main() {
     FILE *fichier = NULL;
     fichier = fopen("resultat.txt","w");
     //Initialisation du tableau et saisie du text
-    printf("Tapez votre message (sans caractere special) :\n");
-    for(int j = 0; j<=10000;j++){
-        tab1[j]=' ';
-    }
+    printf("Tapez votre message (sans caractere special) :\n>");
     scanf("%[^\n]s",tab1);
-    for(int j = 0; j<=10000;j++){
+    for(int j = 0; j<=strlen(tab1);j++){
         tab2[j]=toupper(tab1[j]);
     }
     //verification de la validite du texte saisi
@@ -56,17 +53,29 @@ void main() {
     }
     //choix de l'algorithme
     int rep;
-    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\n");
+    printf("Choisir la methode de chiffrement :\n 1-Cesar\n 2-Vigenere\nToute autre valeur entrainera la fermeture du programme.\n>");
     scanf("%d",&rep);
+    if(rep!=1 && rep!=2) {
+        printf("Valeur incorrecte. Fermeture du programme..");
+        exit(0);
+    }
     //choix pour chiffrer ou dechiffre le message saisi
-    printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n");
+    printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\nToute autre valeur entrainera la fermeture du programme.\n>");
     int rep2;
     scanf("%d",&rep2);
+    if(rep2!=1 && rep2!=2) {
+        printf("Valeur incorrecte. Fermeture du programme..\n");
+        exit(0);
+    }
     //déroulé du programme
     if(rep==1){
         int k;
-        printf("Saisir la cle.\n");
+        printf("Saisir la cle. (Nombre entier attendu)\n");
         scanf("%d",&k);
+        if(verifCleC(k)==false){
+            printf("Cle mal saisie.\nFermeture du programme..\n");
+            exit(0);
+        }
         if(rep2==1){
             printf("Message chiffre : %s\n",chiffreTexte(tab2,k));
             fprintf(fichier, "%s\n",tab2);
@@ -76,16 +85,17 @@ void main() {
             fprintf(fichier, "%s\n",tab2);
             fclose(fichier);
         } else {
-            printf("Taper 1 pour chiffrer votre message, et 2 pour le déchiffrer.\n");
+            printf("Taper 1 pour chiffrer votre message, et 2 pour le déchiffrer.\n>");
             scanf("%d",&rep2);
         }
     } else if (rep==2){
         char cle[1000];
         int k;
-        printf("Saisir la cle.\n");
-        scanf("%s",cle);
-        if(verifCle(cle)==false){
-            printf("Cle de chiffrement incorrect, fermeture du programme.");
+        fflush(stdin);
+        printf("Saisir la cle.(mot attendu)\n");
+        scanf("%[^\n]s",cle);
+        if(verifCleV(cle)==false){
+            printf("Erreur dans la saisie de la cle.\nFermeture du programme..");
             exit(0);
         }
         if(rep2==1){
@@ -97,11 +107,11 @@ void main() {
             fprintf(fichier, "%s\n",tab2);
             fclose(fichier);
         } else {
-            printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n");
+            printf("Taper 1 pour chiffrer votre message, et 2 pour le dechiffrer.\n>");
             scanf("%d",&rep2);
         }
     }
-    printf("Retrouvez le résutlat dans le fichier : resultat.txt \n");
+    printf("Retrouvez le resultat dans le fichier : resultat.txt \n");
 }
 
 
