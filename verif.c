@@ -30,20 +30,20 @@
 #include <ctype.h>
 
 //Verif caractere special
-bool verifTexte(char tab[10000]){
-    char verifTab[67] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'-,() ";
-    for(int i=0; i<=strlen(tab); i++){
-        if(strchr(verifTab, tab[i])==NULL){
+bool verifTexte(wchar_t tab[10000]){
+    wchar_t verifTab[67] =L"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'-,() ";
+    for(int i=0; i<=wcslen(tab); i++){
+        if(iswpunct(tab[i])!=0){
             return false;
         }
     }
     return true;
 }
 
-bool verifCleV(char tab[1000]){
-    char verifTab[53]="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-    for(int i=0; i<=strlen(tab); i++){
-        if(strchr(verifTab, tab[i])==NULL){
+bool verifCleV(wchar_t tab[1000]){
+    wchar_t verifTab[53]=L"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+    for(int i=0; i<=wcslen(tab); i++){
+        if(wcschr(verifTab, tab[i])==NULL){
             return false;
         }
     }
@@ -55,6 +55,14 @@ bool verifCleC(int cle){
         return false;
     }
     return true;
+}
+
+wchar_t replaceAccent(wchar_t tab[10000],int i){
+    if(tab[i]==L'é'|| tab[i]==L'è' || tab[i]==L'ê'){
+        return tab[i]=='e';
+    } else {
+        return tab[i];
+    } 
 }
 
 

@@ -28,14 +28,16 @@
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
+#include <wchar.h>
 
 //
-char* chiffreTexteVigenere(char tab[10000],char k[1000]){ 
+wchar_t* chiffreTexteVigenere(wchar_t tab[10000],wchar_t k[1000]){ 
     int key;
     int j;
-     for(int i=0;i<=10000;i++){
+    int nbSpace = 0;
+     for(int i=0;i<=wcslen(tab);i++){
         if(isalnum(tab[i])){
-            j = i%strlen(k);
+            j = (i-nbSpace)%wcslen(k);
             key=k[j]-97;
             for(int p = 1;p<=key; p++){
                 if(tab[i]=='Z'){
@@ -48,18 +50,20 @@ char* chiffreTexteVigenere(char tab[10000],char k[1000]){
             }
         } else {
             tab[i]=tab[i];
+            nbSpace++;
         }
     }
-    char *r = tab;
+    wchar_t *r = tab;
     return tab;
 }
 
-char* dechiffreTexteVigenere(char tab[10000],char k[1000]){ 
+wchar_t* dechiffreTexteVigenere(wchar_t tab[10000],wchar_t k[1000]){ 
     int key;
     int j;
-     for(int i=0;i<=10000;i++){
+    int nbSpace = 0;
+     for(int i=0;i<=wcslen(tab);i++){
         if(isalnum(tab[i])){
-            j = i%strlen(k);
+            j = (i-nbSpace)%wcslen(k);
             key=k[j]-97;
             for(int p = 1;p<=key; p++){
                 if(tab[i]=='A'){
@@ -72,8 +76,9 @@ char* dechiffreTexteVigenere(char tab[10000],char k[1000]){
             }
         } else {
             tab[i]=tab[i];
+            nbSpace++;
         }
     }
-    char *r = tab;
+    wchar_t *r = tab;
     return tab;
 }

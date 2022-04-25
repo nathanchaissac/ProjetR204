@@ -31,9 +31,9 @@
 #include <ctype.h>
 
 //chiffrage Cesar
-char* chiffreTexte(char tab[10000],int k){ 
+wchar_t* chiffreTexte(wchar_t tab[10000],int k){ 
     int key = k%26;
-     for(int i=0;i<=10000;i++){
+     for(int i=0;i<=wcslen(tab);i++){
         if(isalnum(tab[i])){
             for(int p = 1;p<=key; p++){
                 if(tab[i]=='Z'){
@@ -48,13 +48,13 @@ char* chiffreTexte(char tab[10000],int k){
             tab[i]=tab[i];
         }
     }
-    char *r = tab;
-    return tab;
+    wchar_t *r = tab;
+    return r;
 }
 //Dechiffage Cesar
-char* dechiffreTexte(char tab[10000],int k){ 
+wchar_t* dechiffreTexte(wchar_t tab[10000],int k){ 
     int key = k%26;
-     for(int i=0;i<=10000;i++){
+     for(int i=0;i<=wcslen(tab);i++){
         if(isalnum(tab[i])){
             for(int p = 1;p<=key; p++){
                 if(tab[i]=='A'){
@@ -69,6 +69,6 @@ char* dechiffreTexte(char tab[10000],int k){
             tab[i]=tab[i];
         }
     }
-    char *r = tab;
-    return tab;
+    wchar_t *r = tab;
+    return r;
 }

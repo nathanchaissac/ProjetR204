@@ -25,8 +25,10 @@
 ******************************************************************************/
 
 //verif caratere special
-bool verifTexte(char tab[10000]);
+bool verifTexte(wchar_t tab[10000]);
 //verif cle Vigenere
-bool verifCleV(char tab[10000]);
+bool verifCleV(wchar_t tab[10000]);
 //verif cle cesar
 bool verifCleC(int cle);
+//remplacer accent
+wchar_t replaceAccent(wchar_t tab[10000],int i);

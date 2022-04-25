@@ -23,5 +23,5 @@
 *  Nom du fichier : cesar.h                                                   *
 *                                                                             *
 ******************************************************************************/
-char* chiffreTexte(char tab[10000],int k);
-char* dechiffreTexte(char tab[10000],int k);
+char* chiffreTexte(wchar_t tab[10000],int k);
+char* dechiffreTexte(wchar_t tab[10000],int k);
